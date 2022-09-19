@@ -15,5 +15,7 @@ module.exports = defineConfig({
 
   env: {
     base_url: 'Http://ration.stackchase.com'
-  }
+  },
+
+  reporter: "mochawesome"
 });
