@@ -49,6 +49,7 @@ describe('Login tests', () => {
             cy.url().should('include', 'users/log_in')
             //verify error message is displayed
             cy.get('form').should('contain', 'Invalid email or password')
+            //ve
         })
         
     })
