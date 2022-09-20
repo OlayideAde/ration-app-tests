@@ -20,17 +20,18 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Checkout
+    - name: Checkout repo
     - uses: actions/checkout@v3
     
-    - name: Cypress run
-      uses: cypress-io/github-action@v4.x.x
+    - name: Setup node
+      uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    
-    - name: Install dependencies
+        node-version: 16.0.0
+        
+    - name: Install NPM dependencies
       run: npm install
       
-    - name: Run cypress tests
-      run: npx cypress run
+    - name: Cypress run
+      run: npm run cy:run
+    
+ 
