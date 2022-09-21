@@ -7,7 +7,6 @@ on:
   push:
     branches: 
       - 'main'
-  workflow_dispatch:
 
 jobs:
   checkout-and-test:
@@ -15,19 +14,13 @@ jobs:
     steps:
     - name: Checkout repo
     - uses: actions/checkout@v2
-    
-    - name: Setup node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-        
-    - name: Install NPM dependencies
-      run: npm install
-      
+
     - name: Cypress run
-      uses: cypress-io/github-action@v2
+    - uses: cypress-io/github-action@v2
       timeout-minutes: 10
       with:
+        wait-on: ./
         browser: chrome
+        headless: true
     
  
