@@ -25,8 +25,7 @@ jobs:
 
     - name: Cypress run
       run: npm run cy:open
-      with:
-        browser: chrome
+      
     
 
    
