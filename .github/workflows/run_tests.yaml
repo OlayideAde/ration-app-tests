@@ -13,14 +13,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
-    - name: Cypress run
-    - uses: cypress-io/github-action@v2
-    - run: cypress run
-      timeout-minutes: 10
+    - name: Install node
+      uses: actions/setup-node@v2
       with:
-        browser: chrome
-        headless: true
+        node:version: '14'
+
+    - name: Install dependencies
+      run: npm install
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
     
+
+   
+    
+
+
+          
+
+      
+
+
  
