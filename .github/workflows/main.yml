@@ -6,7 +6,7 @@ name: Cypress test run
 on: 
   push:
     branches: 
-      - 'main'
+      - main
 
 jobs:
   checkout-and-test:
@@ -16,10 +16,9 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Cypress run
-    - uses: cypress-io/github-action@v2
+    - run: cypress run
       timeout-minutes: 10
       with:
-        wait-on: ./
         browser: chrome
         headless: true
     
