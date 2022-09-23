@@ -42,14 +42,16 @@ describe('Login tests', () => {
     
         it('should verify that user cannot login with invalid credentials', () => {
             //verify user is on login page
-            cy.url().should('include', '/users/log_in')
+            //cy.url().should('include', '/users/log_in')
             //login
-            loginPage.userLogin((Cypress.env('invalid_credentials').user_name), (Cypress.env('invalid_credentials').user_password))
+            //loginPage.userLogin((Cypress.env('invalid_credentials').user_name), (Cypress.env('invalid_credentials').user_password))
             //verify user is still on login page
-            cy.url().should('include', 'users/log_in')
+            //cy.url().should('include', 'users/log_in')
             //verify error message is displayed
-            cy.get('form').should('contain', 'Invalid email or password')
+            //cy.get('form').should('contain', 'Invalid email or password')
             //ve
+
+            cy.validLogin()
         })
         
     })
